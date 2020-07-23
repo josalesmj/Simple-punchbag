@@ -14,7 +14,17 @@ new Vue({
     restart: function() {
       this.health = 100;
       this.ended = false;
-    }
+    },
+    punchSound: function() {
+      let snd;
+      if(this.health <= 0) {
+        snd = new Audio('./sound/endPunch.mp3');
+      }
+      else {
+        snd = new Audio('./sound/punch.mp3');
+      }
+      snd.play();
+    },
   },
   computed: {
 
